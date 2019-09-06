@@ -53,8 +53,17 @@ public class UsuarioRepository {
 		return null;
 	}
 	
-	public boolean editarUsuario(Usuario usuario) {
-		usuarios.add(usuario);
-		return true;
+	public boolean modificarUsuario(String nombreUsuario, String nombreNuevo, int edad) {
+		Usuario usuario = buscarUsuario(nombreUsuario);
+		for (Usuario usu : usuarios) {
+			if(usuario.getNombre().equals(nombreUsuario)) {
+				usu.setNombre(nombreNuevo);
+				usu.setEdad(edad);
+				return true;
+			} else {
+				return false;
+			}
+		}
+		return false;
 	}
 }

@@ -28,8 +28,7 @@ public class UsuarioService {
 		return usuarioRepository.listarUsuarios();
 	}
 	
-	public boolean modificarUsuario(String nombreNuevo, String edad) {
-		//Usuario usuario
-		return true;
+	public boolean modificarUsuario(String nombreUsuario, String nombreNuevo, String edad) {
+		return usuarioRepository.modificarUsuario(nombreUsuario,nombreNuevo,Integer.parseInt(edad));
 	}
 }

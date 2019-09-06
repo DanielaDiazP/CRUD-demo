@@ -44,8 +44,9 @@ public class UsuarioController {
 	@RequestMapping(path = "/modificar/{nombre}/{nombreNuevo}/{edad}", 
 			method = RequestMethod.PUT)
 	boolean modificaUsuario(
-			@PathVariable("nombre") String nombreNuevo,
+			@PathVariable("nombre") String nombreUsuario,
+			@PathVariable("nombreNuevo") String nombreNuevo,
 			@PathVariable("edad") String edad) {
-		return usuarioService.modificarUsuario(nombreNuevo, edad);
+		return usuarioService.modificarUsuario(nombreUsuario, nombreNuevo, edad);
 	}
 }
